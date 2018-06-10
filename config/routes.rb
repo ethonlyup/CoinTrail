@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'alerts/create'
+  get 'alerts/destroy'
+  get 'alerts/update'
+  get 'alerts/new'
+  get 'alerts/show'
+  get 'alerts/index'
+  get 'alerts/edit'
   get 'apis/create'
   get 'apis/destroy'
   get 'apis/new'
