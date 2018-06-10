@@ -1,2 +1,3 @@
-class Alert < ApplicationRecord
+class Alert < ApplicationRecord	
+	belongs_to :user
 end

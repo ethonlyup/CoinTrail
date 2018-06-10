@@ -4,8 +4,7 @@ class CreateApis < ActiveRecord::Migration[5.2]
       t.string :publishable_key
       t.string :secret_key
       t.references :user, foreign_key: true
-
-      t.timestamps
+      t.references :exchange, foreign_key: true
     end
   end
 end
