@@ -1,58 +1,73 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+<nav class="navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- Logo -->
+      <span>  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      <%= image_tag "ct_logo.png", height: 50 %>
+      <% end %>
+      </span>
+      <span class="brand-name">Coin Tail</span>
+    </div>
     <% if user_signed_in? %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add User_name<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <%= link_to "#" do %>
+              <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <% end %>
+            </li>
+            <li>
+             <%= link_to "#" do %>
+             <i class="fa fa-cog"></i>  <%= t(".api", default: "API's") %>
+             <% end %>
+             <li>
+              <%= link_to "#" do %>
+              <i class="fa fa-bell"></i>  <%= t(".alert", default: "Alerts") %>
+              <% end %>
+              <li role="separator" class="divider"></li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+                <% end %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+      <% else %>
 
-      <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <div>
+        <!-- Login link (when logged out) -->
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Register</a></li>
+          <li>
+            <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+            <% end %>
+          </li>
+        </ul>
+      </div><!-- /.container-fluid -->
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+      <!-- Dropdown list appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
+            <li><a href="#">Some mobile link</a></li>
+            <li><a href="#">Other one</a></li>
+            <li><a href="#">Other one</a></li>
           </ul>
         </div>
       </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
-  </div>
-
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
     </div>
-  </div>
-</div>
-
+  </nav>
