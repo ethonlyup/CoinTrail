@@ -4,7 +4,6 @@ class ApisController < ApplicationController
   def new
     @apis = Api.all
     @api = Api.new
-
     @exchanges = Exchange.all - current_user.apis.map {|e| e.exchange}.uniq
   end
 
@@ -21,6 +20,9 @@ class ApisController < ApplicationController
   end
 
   def destroy
+    @api = Api.find(params[:id])
+    @api.destroy
+    redirect_to new_api_path
   end
 
   private
