@@ -50,7 +50,7 @@
       <div>
         <!-- Login link (when logged out) -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Register</a></li>
+          <li> <%= link_to "Register", new_user_registration_path %></li>
           <li>
             <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
             <% end %>
