@@ -1,21 +1,38 @@
 class ApisController < ApplicationController
+  before_action :set_api, only: [:edit, :destroy]
+
   def new
-    if current_user.publishable_key && current_user.secret_key
-      @api = Api.new
+    @apis = Api.all
+    @api = Api.new
+    @exchanges = Exchange.all - current_user.apis.map {|e| e.exchange}.uniq
+  end
+
+  def create
+    @api = Api.new(api_params.merge(user: current_user))
+    if @api.save!
+      redirect_to new_api_path, notice: 'API connection was successfully created'
     else
-      notice: 'Please ensure both fields are entered before creating an API connection'
+      render :new
     end
   end
 
   def update
   end
 
-  def create
-  end
-
   def destroy
+    @api = Api.find(params[:id])
+    @api.destroy
+    redirect_to new_api_path
+  end
+
+  private
+
+  def set_api
+    @api = Api.find(params[:id])
+  end
+
+  def api_params
+    params.require(:api).permit(:publishable_key, :secret_key, :exchange_id)
   end
 end
 
-def edit
-end
