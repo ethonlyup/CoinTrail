@@ -23,11 +23,15 @@
     </div>
     <span id="typed6"></span>
   </div>
-  <%  %>
+  <div class="banner-btn">
+  <%= link_to "Learn More", root_path(anchor: "learn-more"), class: "btn btn-success" %>
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %>
+  </div>
 </div>
 
-<div class="container">
 
+<div class="container">
+  <div id="learn-more">
   <h2>What is Lorem Ipsum?</h2>
   <p><b>Lorem Ipsum </b>is simply dummy text of he printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
   <p>
@@ -45,7 +49,7 @@
   <h3>Embarrassing hidden in the middle of text</h3>
   <p> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
   </p>
-
+</div>
   <ul>
     <li>paragraphs</li>
     <li>words</li>
