@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   # get 'apis/destroy'
   # get 'apis/new'
   # get 'apis/update'
-  resources :api, only: [:create, :new, :update]
-  resources :api, only: :destroy, as: :delete_api
+  resources :apis, only: [:create, :new, :update]
+  resources :apis, only: :destroy, as: :delete_api
   resources :alerts
   resources :alerts, only: :update, as: :update_alert
   resources :alerts, only: :destroy, as: :delete_alert
