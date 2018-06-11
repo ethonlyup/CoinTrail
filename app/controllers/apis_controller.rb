@@ -1,6 +1,10 @@
 class ApisController < ApplicationController
   def new
-    @api = Api.new
+    if current_user.publishable_key && current_user.secret_key
+      @api = Api.new
+    else
+      notice: 'Please ensure both fields are entered before creating an API connection'
+    end
   end
 
   def update
@@ -11,4 +15,7 @@ class ApisController < ApplicationController
 
   def destroy
   end
+end
+
+def edit
 end
