@@ -1,2 +1,11 @@
-<h1>Apis#new</h1>
-<p>Find me in app/views/apis/new.html.erb</p>
+<div class="container">
+  <div class="col-sm-4 col-sm-offset-4">
+  <h1>Apis new</h1>
+    <%= simple_form_for @api do |f| %>
+    <%= f.input :exchange, :collection => ["Binance", "Bittrex", "Bitfinex"], prompt: "Select Exchange", label:false %>
+    <%= f.input :publishable_key, presence: true, error: 'blahblahblah'%>
+    <%= f.input :secret_key %>
+    <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
