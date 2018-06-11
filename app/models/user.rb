@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :alerts
   has_many :apis
+  validates_association :alerts, :apis
 end
