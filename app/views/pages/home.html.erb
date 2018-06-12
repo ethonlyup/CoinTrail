@@ -27,30 +27,57 @@
 
 <div class="container">
   <div id="learn-more">
-    <h2>What is Lorem Ipsum?</h2>
-    <p><b>Lorem Ipsum </b>is simply dummy text of he printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-    <p>
-      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-    </p>
-
-    <h3>Contrary to popular belief</h3> <p> Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur.
-    </p>
-
-    <h3>The standard chunk </h3>  <p>Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" .
-    </p>
-    <p>
-      There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are a going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-    </p>
-    <h3>Embarrassing hidden in the middle of text</h3>
-    <p> All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-    </p>
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://bittrex.com/Content/img/Lineage/illustration-algorithmic-trading.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">
+              About Us
+            </h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://bittrex.com/Content/img/Lineage/illustration-algorithmic-trading.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">
+              What we do
+            </h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <img class="card-img-top" src="https://bittrex.com/Content/img/Lineage/illustration-algorithmic-trading.svg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">
+              Security
+            </h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="banner-signup">
-  <div id="form">
-<!-- TODO: add sign up form -->
+  <h2>Sign up</h2>
+  <div id="form-inputs">
+    <!-- TODO: add sign up form -->
+    <%= simple_form_for(:user, :url => registration_path(:user))  do |f| %>
+    <%= f.input :email, placeholder: 'user@domain.com', required: true, autofocus: true %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, required: true %>
   </div>
+  <div id="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+  <% end %>
 </div>
 
 <div class="bottom-nav fixed-bottom">
@@ -77,4 +104,5 @@
   </div>
   <p class="copy"> Copy rights @Vineeth.TR </p>
 </footer>
+
 
