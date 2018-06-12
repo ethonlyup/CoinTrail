@@ -1,8 +1,8 @@
-<nav class="navbar-default navbar-fixed-top">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,17 +10,18 @@
       </button>
       <!-- Logo -->
       <span>  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "ct_logo.png", height: 50 %>
-      <% end %>
+        <%= image_tag "ct_logo.png", height: 50 %>
+        <% end %>
       </span>
       <span class="brand-name">CoinTrail</span>
     </div>
+
     <% if user_signed_in? %>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add User_name<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%  %><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -44,30 +45,92 @@
             </ul>
           </li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-      <% else %>
-
-      <div>
-        <!-- Login link (when logged out) -->
-        <ul class="nav navbar-nav navbar-right">
-          <li> <%= link_to "Register", new_user_registration_path %></li>
-          <li>
-            <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-            <% end %>
-          </li>
-        </ul>
-      </div><!-- /.container-fluid -->
-
-      <!-- Dropdown list appearing on mobile only -->
-      <div class="navbar-wagon-item hidden-md hidden-lg">
-        <div class="dropdown">
-          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Some mobile link</a></li>
-            <li><a href="#">Other one</a></li>
-            <li><a href="#">Other one</a></li>
-          </ul>
-        </div>
       </div>
+
+    <% else %>
+
+    <div id="navbar" class="collapse navbar-collapse">
+<!--       <ul class="nav navbar-nav">
+        <li class="active"><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+      </ul> -->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <h3><b>Register</b></h3>
+              </div>
+                <%= simple_form_for(:user, :url => registration_path(:user), html: { id: "ajax-register-form", role: "form", autocomplete: "off" })  do |f| %>
+<!--                 <div class="form-group">
+                  <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                </div> -->
+                <div class="form-group">
+                  <%= f.input :email, placeholder: 'user@domain.com', required: true, autofocus: true, class: "form-control"%>
+                </div>
+                <div class="form-group">
+                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <%= f.input :password_confirmation, required: true, class: "form-control" %>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-6 col-xs-offset-3">
+                      <%= f.button :submit, "Register Now", class: "form-control btn btn-info" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <h3><b><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></b></h3>
+              </div>
+              <form id="ajax-login-form" action="http://phpoll.com/login/process" method="post" role="form" autocomplete="off">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-xs-7">
+                      <input type="checkbox" tabindex="3" name="remember" id="remember">
+                      <label for="remember"> Remember Me</label>
+                    </div>
+                    <div class="col-xs-5 pull-right">
+                      <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </ul>
+          <% end %>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

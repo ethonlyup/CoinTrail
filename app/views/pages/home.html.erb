@@ -69,7 +69,7 @@
   <h2>Sign up</h2>
   <div id="form-inputs">
     <!-- TODO: add sign up form -->
-    <%= simple_form_for(:user, :url => session_path(:user))  do |f| %>
+    <%= simple_form_for(:user, :url => registration_path(:user))  do |f| %>
     <%= f.input :email, placeholder: 'user@domain.com', required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
