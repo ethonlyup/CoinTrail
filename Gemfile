@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+gem 'simple_form'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'figaro'
