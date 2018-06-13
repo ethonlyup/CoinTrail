@@ -32,11 +32,10 @@ body{background:#ecf0f1; font-family: 'Cormorant', serif; margin:0; color:#888; 
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height:600px;
   width: 100%;
   line-height: 60px;
   color: white;
-  margin-bottom: 55 px;
+  margin-bottom: 100px;
   & #form-actions{
     color: black;
   }
@@ -87,7 +86,7 @@ body{background:#ecf0f1; font-family: 'Cormorant', serif; margin:0; color:#888; 
   }
 
 @media only screen and (min-width: 1030px){
-  .container{
+  .container .banner-signup{
     height: 600px;
   }
 }
