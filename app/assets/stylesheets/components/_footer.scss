@@ -10,6 +10,8 @@
   bottom:0;
   text-align:center;
   flex-shrink: 0;
+  width: 100vw;
+  position:fixed;
 }
 .footer-links {
   display: flex;
@@ -28,7 +30,6 @@
 .footer .fa-heart {
   color: #D23333;
 }
-
 // .footer{background:#0A95AA; color:#fff; height:100px}
 // .copy{
 //   font-size:10px;
