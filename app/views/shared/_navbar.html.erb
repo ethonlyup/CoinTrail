@@ -6,9 +6,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button>
       <!-- Logo -->
-      <span>  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+      </button>
+      <span><%= link_to root_path, class: "navbar-wagon-brand" do %>
         <%= image_tag "ct_logo.png", height: 50 %>
         <% end %>
       </span>
@@ -20,23 +20,23 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret sr-only"></span></a>
           <ul class="dropdown-menu">
-            <li>
+            <li class="active">
               <%= link_to "#" do %>
               <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
-            <li>
+            <li class="nav-item">
              <%= link_to "#" do %>
-             <i class="fa fa-cog"></i>  <%= t(".api", default: "API's") %>
+             <i class="fa fa-cog nav-link"></i>  <%= t(".api", default: "API's") %>
              <% end %>
-             <li>
+             <li class="nav-item">
               <%= link_to "#" do %>
-              <i class="fa fa-bell"></i>  <%= t(".alert", default: "Alerts") %>
+              <i class="fa fa-bell nav-link"></i>  <%= t(".alert", default: "Alerts") %>
               <% end %>
               <li role="separator" class="divider"></li>
-              <li>
+              <li class="nav-item">
                 <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
                 <% end %>
@@ -61,23 +61,24 @@
               <div class="text-center">
                 <h3><b>Register</b></h3>
               </div>
+<!--               <form id="ajax-register-form" role="form" autocomplete="off"> -->
                 <%= simple_form_for(:user, :url => registration_path(:user), html: { id: "ajax-register-form", role: "form", autocomplete: "off" })  do |f| %>
 <!--                 <div class="form-group">
                   <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                 </div> -->
                 <div class="form-group">
-                  <%= f.input :email, placeholder: 'user@domain.com', required: true, autofocus: true, class: "form-control"%>
+                  <%= f.input :email, placeholder: 'user@domain.com', required: true, autofocus: true, html: { class: "form-control", tabindex: "1", name: "email", id: "email" }%>
                 </div>
                 <div class="form-group">
-                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "form-control" %>
+                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), html: { class: "form-control", tabindex: "2", name: "password", id: "password" } %>
                 </div>
                 <div class="form-group">
-                  <%= f.input :password_confirmation, required: true, class: "form-control" %>
+                  <%= f.input :password_confirmation, required: true, html: { class: "form-control", tabindex: "2", name: "password_confirmation", id: "password_confirmation" }%>
                 </div>
                 <div class="form-group">
                   <div class="row">
                     <div class="col-xs-6 col-xs-offset-3">
-                      <%= f.button :submit, "Register Now", class: "form-control btn btn-info" %>
+                      <%= f.button :submit, "Register", html: { class: "form-control btn btn-info", name: "register-submit", id: "register-submit", tabindex: "4" }%>
                     </div>
                   </div>
                 </div>
@@ -94,17 +95,17 @@
               </div>
               <%= simple_form_for(:user, :url => session_path(:user), html: { id: "ajax-login-form", role: "form", autocomplete: "off" })  do |f| %>
                 <div class="form-group">
-                  <%= f.input :email, required: false, autofocus: true, html: { class: "form-control", id:"email", placeholder: "Email", autocomplete: "off"} %>
+                  <p> <%= f.input :email, required: false, autofocus: true, html: { class: "form-control", tabindex: "1", name: "email", id:"email", placeholder: "Email", autocomplete: "off"} %></p>
                 </div>
 
                 <div class="form-group">
-                  <%= f.input :password, required: false, html: { class: "form-control", id: "password", placeholder: "Password", autocomplete: "off"} %>
+                  <p><%= f.input :password, required: false, html: { class: "form-control", tabindex: "2", name: "password", id: "password", placeholder: "Password", autocomplete: "off"} %></p>
                 </div>
 
                 <div class="form-group">
                   <div class="row">
                     <div class="col-xs-7">
-                      <%= f.input :remember_me, as: :boolean %>
+                      <p><%= f.input :remember_me, as: :boolean, html: { name: "remember", id: "remember", tabindex: "4"} %></p>
                     </div>
                     <div class="col-xs-5 pull-right">
                       <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
@@ -123,6 +124,7 @@
             </div>
           </ul>
           <% end %>
+<!--       </form> -->
         </li>
       </ul>
     </div>

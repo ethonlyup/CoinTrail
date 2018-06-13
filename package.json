@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
+    "animate.css": "^3.6.1",
     "bootstrap": "3",
     "jquery": "^3.3.1",
     "smoothscroll-polyfill": "^0.4.3",
