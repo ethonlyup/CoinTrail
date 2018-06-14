@@ -10,7 +10,7 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
   flex: 1 0 auto;
 }
 .banner{
-  background:#752B6E;
+  background: $main-color;
   line-height: 150px;
   text-align:center;
   color:#fff;
@@ -26,8 +26,16 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 .banner p {
   font-size: 85px;
 }
+.banner-learnmore{
+  margin-top: 20px;
+  padding:0 15px;
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .banner-signup{
-  background:#752B6E;
+  background: $main-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +43,7 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
   width: 100%;
   line-height: 60px;
   color: white;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   & #form-actions{
     color: black;
   }
@@ -63,19 +71,16 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
   text-decoration:none;
 }
 
-.container{
-  max-width:1200px;
-  padding:0 15px;
-  width:100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 // .container:after {
 //     clear: both;
 //     content: "";
 //     display: table;
 // }
+.card h-100{
+  display:flex;
+  align-items: center;
+}
 .card-body{
   display: flex;
   flex-direction: column;
@@ -86,7 +91,10 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
   }
 
 @media only screen and (min-width: 1030px){
-  .container .banner-signup{
+  .banner-learnmore{
+    height: 600px;
+  }
+  .banner-signup{
     height: 600px;
   }
 }

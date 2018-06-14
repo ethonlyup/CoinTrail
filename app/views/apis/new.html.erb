@@ -1,32 +1,34 @@
-<div class="container-fluid">
-  <div class="col-sm-5 col-sm-offset-2">
-    <h1>Your Api List</h1>
-    <% if @exchanges.present? %>
+<div class="container-new">
+    <div class="col-xs-6 col-sm-8">
+      <h1>Your Api List</h1>
+      <div class="col-sm-8" id="panel-add">
+      <% if @exchanges.present? %>
       <%= simple_form_for @api do |f| %>
       <%= f.collection_select :exchange_id, @exchanges, :id, :name, prompt: "Select Exchange", label:false %>
       <%= f.input :publishable_key %>
       <%= f.input :secret_key %>
       <%= f.button :submit %>
+      </div>
       <% end %>
-    <% end %>
-    <% @apis.each do |api| %>
-      <div class="panel-group">
-        <div class="panel panel-primary">
-          <div class="panel-heading">
-            <h4><%= api.exchange.name %></h4>
-          </div>
-          <div class="panel-body">
-            <h4>Publishable Key</h4>
-            <p><%= api.publishable_key.sub(/(?<=\A.{4})(.*)(?=.{0}\z)/) { |match| '*' * match.length } %></p>
-            <h4>Secret Key</h4>
-            <p><%= api.secret_key.sub(/(?<=\A.{0})(.*)(?=.{0}\z)/) { |match| '*' * match.length } %></p>
-          </div>
-          <div class="panel-footer">
-            <%= link_to 'Delete', delete_api_path(api), method: :delete, class: "btn btn-danger",
-            data: { confirm: "Are You Sure?" } %>
+      <% end %>
+        <% @apis.each do |api| %>
+        <div class="col-sm-8 panel-group" id="panel-show">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h4><%= api.exchange.name %></h4>
+            </div>
+            <div class="panel-body">
+              <h4>Publishable Key</h4>
+              <p><%= api.publishable_key.sub(/(?<=\A.{4})(.*)(?=.{0}\z)/) { |match| '*' * match.length } %></p>
+              <h4>Secret Key</h4>
+              <p><%= api.secret_key.sub(/(?<=\A.{0})(.*)(?=.{0}\z)/) { |match| '*' * match.length } %></p>
+            </div>
+            <div class="panel-footer">
+              <%= link_to 'Delete', delete_api_path(api), method: :delete, class: "btn btn-danger",
+              data: { confirm: "Are You Sure?" } %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+        <% end %>
+    </div>
 </div>
