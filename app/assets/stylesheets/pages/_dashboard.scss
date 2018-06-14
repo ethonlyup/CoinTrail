@@ -10,22 +10,18 @@
   width: 100%;
   min-height: 100vh;
   background: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   padding: 5% 4%;
-  margin-top: 3%
+  margin-top: 1%;
 }
 
 .dashboard-wrap {
   width: 1170px;
-  height: 70vh;
-  overflow-y: scroll;
+  height: 81vh;
+  // overflow-y: scroll;
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -33,6 +29,7 @@
 .dashboard {
   background-color: #fff;
 }
+
 
 table {
   width: 100%;
@@ -72,8 +69,14 @@ th, td {
 .dashboard-body td {
   padding-top: 16px;
   padding-bottom: 16px;
+
 }
 
+.dashboard-body {
+  height: 65vh;
+  overflow-y: scroll;
+  position: relative;
+}
 /*==================================================================
 [ Fix header ]*/
 .dashboard {
@@ -87,12 +90,6 @@ th, td {
   top: 0;
   left: 0;
 }
-
-.dashboard-body {
-  max-height: 585px;
-  overflow: auto;
-}
-
 
 /*==================================================================
 [ Ver1 ]*/
@@ -120,15 +117,14 @@ th, td {
 
 //[Border]
 /*---------------------------------------------*/
+.shadow{
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 10px;
+}
 
-.dashboard.ver1 {
+.ver1 {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard.ver1 .ps__rail-y {
@@ -147,10 +143,6 @@ th, td {
 
 /*//////////////////////////////////////////////////////////////////
 [ Scroll bar ]*/
-.js-pscroll {
-  position: relative;
-  overflow: hidden;
-}
 
 .dashboard .ps__rail-y {
   width: 9px;
