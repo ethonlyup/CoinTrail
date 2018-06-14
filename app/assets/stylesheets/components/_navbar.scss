@@ -1,10 +1,23 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+.wrapper{
+  background-color: $main-color;
+}
 .container-fluid{
   margin-left: 40px;
   margin-right: 40px;
 }
 .navbar{
+  background-color: $third-color;
+  margin-bottom: 0 !important;
   height: 60px;
+  border-bottom-left-radius: 40px 20px;
+  border-bottom-right-radius: 40px 20px;
+  color: $light-gray;
+}
+#navbar{
+  color: $light-gray;
+  text-align:center;
+  vertical-align: center;
 }
 .navbar-header{
   font-size: 24px;
@@ -21,11 +34,18 @@
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: $secondary-color !important;
 }
+#right-dropdown {
+  color: black !important;
+}
 ul.dropdown-lr {
   width: 300px;
 }
-#center-links{
-  align-items: center;
+ul.nav.navbar-nav.navbar-center{
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin-top: 10px;
+  font-size: 25px;
 }
 /* mobile fix */
 @media (max-width: 768px) {
