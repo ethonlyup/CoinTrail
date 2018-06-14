@@ -1,8 +1,18 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
-
+.container-fluid{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.navbar{
+  height: 60px;
+}
+.navbar-header{
+  font-size: 24px;
+  margin-top: 5px;
+}
 .dropdown-toggle {
   margin-top: 15px;
-  font-size: 25px;
+  font-size: 18px;
   text-decoration: none;
 }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
@@ -14,7 +24,9 @@
 ul.dropdown-lr {
   width: 300px;
 }
-
+#center-links{
+  align-items: center;
+}
 /* mobile fix */
 @media (max-width: 768px) {
   .dropdown-lr h3 {
