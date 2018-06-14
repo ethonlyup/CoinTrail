@@ -13,6 +13,8 @@
   width: 100vw;
   position:fixed;
   color: $light-gray;
+  border-top-left-radius: 40px 20px;
+  border-top-right-radius: 40px 20px;
 }
 .footer-links {
   display: flex;
