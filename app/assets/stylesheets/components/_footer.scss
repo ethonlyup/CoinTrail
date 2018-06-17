@@ -1,9 +1,9 @@
 .footer {
-  background: #F4F4F4;
+  background: $third-color;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 60px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   // top:auto;
@@ -12,6 +12,9 @@
   flex-shrink: 0;
   width: 100vw;
   position:fixed;
+  color: $light-gray;
+  // border-top-left-radius: 20px 10px;
+  // border-top-right-radius: 20px 10px;
 }
 .footer-links {
   display: flex;
@@ -28,7 +31,7 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: $secondary-color;
 }
 // .footer{background:#0A95AA; color:#fff; height:100px}
 // .copy{

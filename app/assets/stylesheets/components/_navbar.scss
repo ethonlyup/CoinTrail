@@ -1,4 +1,62 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
+.wrapper{
+  background-color: $main-color;
+}
+.container-fluid{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.navbar{
+  background-color: $third-color;
+  margin-bottom: 0 !important;
+  height: 60px;
+  // border-bottom-left-radius: 20px 10px;
+  // border-bottom-right-radius: 20px 10px;
+  color: $light-gray;
+}
+#navbar{
+  color: $light-gray;
+  text-align:center;
+  vertical-align: center;
+}
+.navbar-header{
+  font-size: 24px;
+  margin-top: 5px;
+}
+.dropdown-toggle {
+  margin-top: 15px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: $secondary-color !important;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+    background-color: $secondary-color !important;
+}
+#right-dropdown {
+  color: black !important;
+}
+ul.dropdown-lr {
+  width: 300px;
+}
+ul.nav.navbar-nav.navbar-center{
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin-top: 10px;
+  font-size: 25px;
+}
+/* mobile fix */
+@media (max-width: 768px) {
+  .dropdown-lr h3 {
+    color: black;
+  }
+  .dropdown-lr label {
+    color: black;
+  }
+}
+
 // /* Main navbar */
 // .navbar {
 //   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -47,21 +105,11 @@
 //   cursor: pointer;
 //   padding: 0 20px;
 // }
-.dropdown-toggle {
-  margin-top: 15px;
-  font-size: 25px;
-  text-decoration: none;
-}
 // // /* Navbar link */
 // .navbar-wagon-link:hover {
 //   text-decoration: none;
 // }
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: #b12d86 !important;
-}
-.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: #b12d86 !important;
-}
+
 // // /* Dropdown menu */
 // .navbar-wagon-dropdown-menu {
 //   margin-top: 15px;
@@ -102,16 +150,3 @@
 
 // }
 /* General sizing */
-ul.dropdown-lr {
-  width: 300px;
-}
-
-/* mobile fix */
-@media (max-width: 768px) {
-  .dropdown-lr h3 {
-    color: black;
-  }
-  .dropdown-lr label {
-    color: black;
-  }
-}
