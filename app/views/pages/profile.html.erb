@@ -9,8 +9,8 @@
       </div>
       <!-- left column -->
       <div class="col-md-9" id="profile">
-      <h3> 
-        <% if current_user.first_name.nil? %>
+      <h3>
+        <% if current_user.first_name.nil? && current_user.last_name.nil? %>
         <%= "Please edit your profile" %>
         <% else %>
         <%= current_user.first_name.upcase %> <%= current_user.last_name.upcase %>
