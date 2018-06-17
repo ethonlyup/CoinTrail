@@ -21,5 +21,34 @@ thead {
   font-size: 18px;
   color: #fff;
   line-height: 1.4;
-  background-color: #6c7ae0
+  background-color: #6c7ae0;
+  width: 86.8%;
+  padding-left: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+thead td {
+  height: 10vh;
+}
+
+tr:nth-child(even) {
+  background: #f8f6ff;
+}
+
+.shadow {
+  box-shadow: 2px 2px 2px 2px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hello {
+  overflow-y: scroll;
+  height: 60vh;
+}
+
+.table-container {
+  height: 75vh;
+  margin-bottom: -15vh;
 }
