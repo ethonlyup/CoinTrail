@@ -22,33 +22,51 @@ thead {
   color: #fff;
   line-height: 1.4;
   background-color: #6c7ae0;
-  width: 86.8%;
   padding-left: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.shadow {
+  box-shadow: 3px 3px #999;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 66vh;
 }
 
 thead td {
   height: 10vh;
 }
 
+tbody td {
+  padding-left: 31px !important;
+}
+
 tr:nth-child(even) {
   background: #f8f6ff;
 }
 
-.shadow {
-  box-shadow: 2px 2px 2px 2px;
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
+
+tbody {
+  display: block;
+  height: 56vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.hello {
-  overflow-y: scroll;
-  height: 60vh;
+thead, tbody tr {
+  display: table;
+  width: 101%;
+  table-layout: fixed;
 }
+
 
 .table-container {
   height: 75vh;
   margin-bottom: -15vh;
 }
+
+// .hello {
+//   height: 100vh;
+// }
