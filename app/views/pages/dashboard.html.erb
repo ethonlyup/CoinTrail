@@ -1,5 +1,5 @@
 <div class="total-container">
-  <h1>Total</h1>
+  <h1>Total = <%= @total_sum %></h1>
 </div>
 
 <div class="container">
@@ -8,26 +8,28 @@
       <table class="table">
         <thead>
           <tr>
-            <td class="col" style="transform: translate(6%, 18%)">Coin</td>
+            <td class="col" style="transform: translate(14%, 18%)">Coin</td>
             <td class="col" style="transform: translate(10%, 18%)">Holdings</td>
             <td class="col" style="transform: translate(17%, 18%)">Price</td>
             <td class="col" style="transform: translate(14%, 18%)">24hr</td>
-            <td class="col" style="transform: translate(10%, 18%)">Charts</td>
-            <td class="col" style="transform: translate(9%, 18%)">Alerts</td>
-            <td class="col" style="transform: translate(-4%, 18%)">Preferances</td>
+            <td class="col" style="transform: translate(4%, 18%)">Charts</td>
+            <td class="col" style="transform: translate(5%, 18%)">Alerts</td>
+            <td class="col" style="transform: translate(-12%, 18%)">Preferances</td>
           </tr>
         </thead>
         <tbody>
+          <% @balances.each do |b| %>
           <tr>
-            <td><%= image_tag "btc.png", size: "24" %><br>BTC</td>
-            <td>$25000<br>5</td>
-            <td>$5000</td>
-            <td>15% <%= image_tag "redarrow.png", size: "16" %></td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+          <td><%= image_tag "btc.png", size: "24", class: "logos" %><br><%= b[:asset] %></td>
+          <td>$<%= b[:total].round(2) %><br><%= b[:holding]%></td>
+          <td>$<%= b[:price] %></td>
+          <td>14% <%= image_tag "redarrow.png", size: "16" %></td>
+          <td><%= image_tag "tradingview-icon.png", size: "36" %> </td>
+          <td><%= image_tag "notification.png" %></td>
+          <td><%= image_tag "gear.png" %></td>
           </tr>
-          <tr>
+          <% end %>
+          <!-- <tr>
             <td>Logo<br>BTC</td>
             <td>Jacob</td>
             <td>tdornton</td>
@@ -125,7 +127,7 @@
             <td>@mdo</td>
             <td>@mdo</td>
             <td>chocolate</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
     </div>

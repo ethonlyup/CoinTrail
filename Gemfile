@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
-gem 'simple_form'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'figaro'
@@ -18,8 +17,12 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'binance'
+gem 'binance-ruby'
+gem 'bittrex'
 gem 'cryptoexchange'
+gem 'openssl'
+gem 'rate-limiting'
+gem 'websocket'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
