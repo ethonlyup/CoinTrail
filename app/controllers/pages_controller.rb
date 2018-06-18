@@ -12,9 +12,13 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    if current_user.apis.exists?
     binance_balance
     bittrex_balance
     set_total
+  else
+    redirect_to new_api_path, notice: "Please add an api before using dashboard"
+    end
   end
 
   def binance_balance
