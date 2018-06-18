@@ -11,8 +11,11 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 }
 .banner{
   // background: url("https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=1950&q=80");
-  background: $main-color;
-  line-height: 150px;
+  background-image: url("https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
+");
+  background-size: cover;
+  background-repeat: no-repeat;
+  line-height: 4;
   text-align:center;
   color:#fff;
   font-size:60px;
