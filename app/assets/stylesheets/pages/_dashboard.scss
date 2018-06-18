@@ -1,190 +1,72 @@
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-
-.limiter {
-  width: 1920px;
-  margin: 0 auto;
+.container {
+  max-width: 100%;
+  padding-left: 13vh;
+  width: 100%;
+  margin: auto;
+  padding-right: 13vh;
 }
 
-.dashboard-container {
-  width: 100%;
-  min-height: 100vh;
-  background: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
+.total-container {
   justify-content: center;
-  flex-wrap: wrap;
-  padding: 5% 4%;
-}
-
-.dashboard-wrap {
-  width: 1170px;
-  height: 70vh;
-  overflow-y: scroll;
-}
-
-/*//////////////////////////////////////////////////////////////////
-[ Table ]*/
-.dashboard {
-  background-color: #fff;
-}
-
-table {
+  align-content: center;
+  max-width: 100%;
+  padding-left: 13vh;
+  padding-right: 13vh;
   width: 100%;
+  margin: auto;
 }
 
-th, td {
-  font-weight: unset;
-  padding-right: 10px;
-}
-
-.column1 {
-  width: 23%;
-  padding-left: 40px;
-}
-
-.column2 {
-  width: 13%;
-}
-
-.column3 {
-  width: 22%;
-}
-
-.column4 {
-  width: 19%;
-}
-
-.column5 {
-  width: 13%;
-}
-
-.dashboard-head th {
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-
-.dashboard-body td {
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-
-/*==================================================================
-[ Fix header ]*/
-.dashboard {
-  position: relative;
-  padding-top: 60px;
-}
-
-.dashboard-head {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
-.dashboard-body {
-  max-height: 585px;
-  overflow: auto;
-}
-
-
-/*==================================================================
-[ Ver1 ]*/
-
-.dashboard.ver1 th {
-  font-family: 'Roboto', serif;
+thead {
+  font-family: Lato-Bold;
   font-size: 18px;
   color: #fff;
   line-height: 1.4;
-
   background-color: #6c7ae0;
+  padding-left: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.dashboard.ver1 td {
-  font-family: Lato-Regular;
-  font-size: 15px;
-  color: #808080;
-  line-height: 1.4;
-}
-
-.dashboard.ver1 .dashboard-body tr:nth-child(even) {
-  background-color: #f8f6ff;
-}
-
-
-//[Border]
-/*---------------------------------------------*/
-
-.dashboard.ver1 {
+.shadow {
+  box-shadow: 3px 3px #999;
+  width: 100%;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  height: 66vh;
 }
 
-.dashboard.ver1 .ps__rail-y {
-  right: 5px;
+thead td {
+  height: 10vh;
 }
 
-.dashboard.ver1 .ps__rail-y::before {
-  background-color: #ebebeb;
+tbody td {
+  padding-left: 31px !important;
 }
 
-.dashboard.ver1 .ps__rail-y .ps__thumb-y::before {
-  background-color: #cccccc;
+tr:nth-child(even) {
+  background: #f8f6ff;
 }
 
 
-
-/*//////////////////////////////////////////////////////////////////
-[ Scroll bar ]*/
-.js-pscroll {
-  position: relative;
-  overflow: hidden;
-}
-
-.dashboard .ps__rail-y {
-  width: 9px;
-  background-color: transparent;
-  opacity: 1 !important;
-  right: 5px;
-}
-
-.dashboard .ps__rail-y::before {
-  content: "";
+tbody {
   display: block;
-  position: absolute;
-  background-color: #ebebeb;
-  border-radius: 5px;
-  width: 100%;
-  height: calc(100% - 30px);
-  left: 0;
-  top: 15px;
+  height: 56vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.dashboard .ps__rail-y .ps__thumb-y {
-  width: 100%;
-  right: 0;
-  background-color: transparent;
-  opacity: 1 !important;
+thead, tbody tr {
+  display: table;
+  width: 101%;
+  table-layout: fixed;
 }
 
-.dashboard .ps__rail-y .ps__thumb-y::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background-color: #cccccc;
-  border-radius: 5px;
-  width: 100%;
-  height: calc(100% - 30px);
-  left: 0;
-  top: 15px;
+
+.table-container {
+  height: 75vh;
+  margin-bottom: -15vh;
+}
+
+.logos {
+  margin-left: 4%;
 }
