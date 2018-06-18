@@ -1,2 +1,35 @@
-<h1>Alerts#new</h1>
-<p>Find me in app/views/alerts/new.html.erb</p>
+<div class="container">
+  <div class="alert-new">
+    <div class="col-xs-6 col-sm-8">
+      <h1 id = "alert">Alerts</h1>
+      <div class="col-sm-8" id="panel-add">
+        <%= simple_form_for @alert do |f| %>
+        <%= f.input :coin_name, label: "Symbol" %>
+        <%= f.input :price_above %>
+        <%= f.input :price_below %>
+        <%= f.button :submit %>
+      </div>
+      <% end %>
+      <div class="col-xs-6 col-sm-8 divTable" id="api-list">
+        <div class="col-lg-8 divTableBody">
+          <div class="divTableHeading">
+            <div class="divTableCell">Coin</div>
+            <div class="divTableCell">Price Above</div>
+            <div class="divTableCell">Price Below</div>
+          </div>
+          <% @alerts.each do |alert| %>
+          <div class="divTableRow">
+            <div class="divTableCell"><%= alert.coin_name %></div>
+            <div class="divTableCell"><%= alert.price_above%></div>
+            <div class="divTableCell"><%= alert.price_below %></div>
+            <div class="delete"> <%= link_to delete_alert_path(alert), method: :delete, data: { confirm: "Are You Sure?" } do %>
+              <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

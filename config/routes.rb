@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :apis, only: [:create, :new, :update]
   resources :apis, only: :destroy, as: :delete_api
-  resources :alerts
+  resources :alerts, except: :index
   resources :alerts, only: :update, as: :update_alert
   resources :alerts, only: :destroy, as: :delete_alert
 
