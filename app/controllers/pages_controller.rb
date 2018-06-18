@@ -7,8 +7,14 @@ class PagesController < ApplicationController
     end
   end
 
+  def market_data
+
+  end
+
   def dashboard
     binance_balance
+    bittrex_balance
+    set_total
   end
 
   def binance_balance
@@ -16,55 +22,71 @@ class PagesController < ApplicationController
     Binance::Api::Configuration.api_key = @binance_publishable
     Binance::Api::Configuration.secret_key = @binance_secret
     @binance_account = Binance::Api.info!
-    @balances = Array.new
-    coin = Hash.new
-    # btcval = Binance::Api.ticker!(symbol: "BTCUSDT", type: 'price')
-    # btc_usdt = btcval[:price].to_f
+    @binance_balance = Array.new
     @binance_account[:balances].each do |b|
       if (b[:free]).to_f > 0.00001
-        # unless b[:asset] == "EON"
-        #   if b[:asset] == "BTC"
-        #     dollar_value = b[:free].to_f * btc_usdt
-        #     dollar_value.round(4)
         price = rand(10..6500)
-        @balances << {
+        @binance_balance<< {
           asset: b[:asset],
-          # free: b[:free],
-          # locked: b[:locked],
           price: price,
           holding: (b[:locked].to_f + b[:free].to_f).round(5),
           total: (b[:locked].to_f + b[:free].to_f) * price
-            }
-        #   else
-        #     pair_price =  Binance::Api.ticker!(symbol: b[:asset]+'BTC', type: 'price')
-        #     holding_val = b[:free].to_f * pair_price[:price].to_f
-        #     dollar_value = holding_val * btc_usdt
-        #     dollar_value.round(4)
-        #     coin = {
-        #       asset: b[:asset],
-        #       free: b[:free],
-        #       locked: b[:locked],
-        #       fiat: dollar_value
-        #     }
-        #     @balances << coin
-        #   end
-        # end
+        }
       end
     end
-    @balances.sort_by! { |z| z[:total] }.reverse!
-    @total_sum = @balances.map{|s| s[:total]}.sum.round(0)
   end
 
-  def set_keys_bittrex
-    @bittrex_publishable = current_user.apis.where("exchange_id = 1").first.publishable_key
-    @bittrex_secret = current_user.apis.where("exchange_id = 1").first.secret_key
+  def bittrex_balance
+    set_keys_bittrex
+    Bittrex.config do |c|
+      c.key = @bittrex_publishable
+      c.secret = @bittrex_secret
+    end
+    @bittrex_balance = Array.new
+    @bittrex_account = Bittrex::Wallet.all
+    @bittrex_account.each do |c|
+      if c.available + c.pending > 0.00000000
+        price = rand(10..6500)
+        @bittrex_balance << {
+          asset: c.raw["Currency"],
+          price: price,
+          holding: c.available,
+          total: c.available * price
+        }
+      end
+    end
   end
 
-  def set_keys_binance
-    @binance_publishable = current_user.apis.where("exchange_id = 2").first.publishable_key
-    @binance_secret = current_user.apis.where("exchange_id = 2").first.secret_key
+  def set_total
+    @total_balance = @binance_balance.dup
+    @bittrex_balance.each do |c|
+      exists = @binance_balance.index {|i| i[:asset] == c[:asset]}
+      if exists.present?
+       total = @total_balance[exists][:holding] + c[:holding]
+       @total_balance[exists] = {
+         asset: c[:asset],
+         price: c[:price],
+         holding: total,
+         total: total * c[:price]
+       }
+     else
+      @total_balance << c
+    end
   end
+  @total_balance.sort_by! { |z| z[:total] }.reverse!
+  @total_sum = @total_balance.map {|h| h[:total]}.sum.round(2)
+end
 
-  private :set_keys_binance, :set_keys_bittrex, :binance_balance
+def set_keys_bittrex
+  @bittrex_publishable = current_user.apis.where("exchange_id = 1").first.publishable_key
+  @bittrex_secret = current_user.apis.where("exchange_id = 1").first.secret_key
+end
+
+def set_keys_binance
+  @binance_publishable = current_user.apis.where("exchange_id = 2").first.publishable_key
+  @binance_secret = current_user.apis.where("exchange_id = 2").first.secret_key
+end
+
+private :set_keys_binance, :set_keys_bittrex, :binance_balance
 
 end

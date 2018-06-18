@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @balances.each do |b| %>
+          <% @total_balance.each do |b| %>
           <tr>
           <td><%= image_tag "btc.png", size: "24", class: "logos" %><br><%= b[:asset] %></td>
           <td>$<%= b[:total].round(2) %><br><%= b[:holding]%></td>
@@ -29,105 +29,6 @@
           <td><%= image_tag "gear.png" %></td>
           </tr>
           <% end %>
-          <!-- <tr>
-            <td>Logo<br>BTC</td>
-            <td>Jacob</td>
-            <td>tdornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>Logo<br>BTC</td>
-            <td>Larry</td>
-            <td>tde Bird</td>
-            <td>@twitter</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>chocolate</td>
-          </tr> -->
         </tbody>
       </table>
     </div>
