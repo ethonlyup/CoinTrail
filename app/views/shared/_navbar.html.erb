@@ -68,6 +68,7 @@
               </div>
 <!--               <form id="ajax-register-form" role="form" autocomplete="off"> -->
                 <%= simple_form_for(:user, :url => registration_path(:user), html: { id: "ajax-register-form", role: "form", autocomplete: "off" })  do |f| %>
+                <%= f.error_notification %>
 <!--                 <div class="form-group">
                   <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                 </div> -->
