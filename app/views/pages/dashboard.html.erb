@@ -20,7 +20,7 @@
         <tbody>
           <% @total_balance.each do |b| %>
           <tr>
-          <td><%= image_tag "#{b[:asset]}", size: "24", class: "logos" %><br><%= b[:asset] %></td>
+          <td><%= image_tag "coinlogos/#{b[:asset].downcase}.png", size: "24", class: "logos" %><br><%= b[:asset] %></td>
           <td>$<%= b[:total].round(2) %><br><%= b[:holding]%></td>
           <td>$<%= b[:price] %></td>
           <td>14% <%= image_tag "redarrow.png", size: "16" %></td>
