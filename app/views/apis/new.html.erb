@@ -1,7 +1,7 @@
 <div class="container">
   <div class="api-new">
     <div class="col-xs-6 col-sm-8">
-      <h1>Your Api List</h1>
+      <h1 id = "api">Your Api List</h1>
       <div class="col-sm-8" id="panel-add">
         <% if @exchanges.present? %>
         <%= simple_form_for @api do |f| %>
