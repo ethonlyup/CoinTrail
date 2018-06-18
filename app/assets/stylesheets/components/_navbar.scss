@@ -27,6 +27,15 @@
   margin-top: 15px;
   font-size: 18px;
   text-decoration: none;
+  display: inline-block;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: #e5e5e5;
+    display: initial;
+    left: auto;
 }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
     background-color: $secondary-color !important;
