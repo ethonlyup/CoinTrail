@@ -64,6 +64,9 @@ GEM
     builder (3.2.3)
     byebug (10.0.2)
     coderay (1.1.2)
+    coinmarketcap (0.2.4)
+      httparty
+      nokogiri
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     cryptoexchange (0.22.0)
@@ -245,6 +248,7 @@ DEPENDENCIES
   bittrex
   bootsnap
   bootstrap-sass (~> 3.3)
+  coinmarketcap
   cryptoexchange
   devise
   figaro
