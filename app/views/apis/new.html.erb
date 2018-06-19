@@ -1,17 +1,19 @@
-<div class="new-api-page">
-  <% if @exchanges.present? %>
-  <div class="col-xs-2 col-sm-4" id="panel-add">
-    <h1>Add API</h1>
+
+
+
+  <div class="new-api-page">
+    <% if @exchanges.present? %>
+      <div class="col-xs-2 col-sm-4" id="panel-add">
+    <h2>Add your API</h2>
     <%= simple_form_for @api do |f| %>
     <%= f.collection_select :exchange_id, @exchanges, :id, :name, prompt: "Select Exchange", label:false %>
-    <%= f.input :publishable_key %>
-    <%= f.input :secret_key %>
-    <%= f.button :submit %>
+    <p><label for="publishable_key"><%= f.input :publishable_key %></label></p>
+    <p><label for="secret_key"><%= f.input :secret_key %></label></p>
+      <%= f.button :submit, class: "btn-api" %>
     <% end %>
   </div>
   <% end %>
-
-  <div class="col-xs-4 col-sm-6 divTable" id="api-list">
+        <div class="col-xs-4 col-sm-6 divTable" id="api-list">
     <h1 id = "api-title">Api List</h1>
     <div class="col-xs-6 col-sm-8 divTableBody">
       <div class="divTableHeading">
@@ -32,6 +34,4 @@
       <% end %>
     </div>
   </div>
-</div>
-
-
+  </div>
