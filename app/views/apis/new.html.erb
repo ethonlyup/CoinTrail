@@ -1,40 +1,37 @@
-<div class="container">
+<div class="new-api-page">
+  <% if @exchanges.present? %>
+  <div class="col-xs-2 col-sm-4" id="panel-add">
+    <h1>Add API</h1>
+    <%= simple_form_for @api do |f| %>
+    <%= f.collection_select :exchange_id, @exchanges, :id, :name, prompt: "Select Exchange", label:false %>
+    <%= f.input :publishable_key %>
+    <%= f.input :secret_key %>
+    <%= f.button :submit %>
+    <% end %>
+  </div>
+  <% end %>
 
-      <div class="col-xs-2 col-sm-4" id="panel-add">
-      <h1>Add API</h1>
-        <% if @exchanges.present? %>
-        <%= simple_form_for @api do |f| %>
-        <%= f.collection_select :exchange_id, @exchanges, :id, :name, prompt: "Select Exchange", label:false %>
-        <%= f.input :publishable_key %>
-        <%= f.input :secret_key %>
-        <%= f.button :submit %>
+  <div class="col-xs-4 col-sm-6 divTable" id="api-list">
+    <h1 id = "api-title">Api List</h1>
+    <div class="col-xs-6 col-sm-8 divTableBody">
+      <div class="divTableHeading">
+        <div class="divTableCell">Exchange</div>
+        <div class="divTableCell">Publishable Key</div>
+        <div class="divTableCell">Secret Key</div>
       </div>
-      <% end %>
-      <% end %>
-      <% else %>
-
-      <div class="col-xs-4 col-sm-6 divTable" id="api-list">
-      <h1 id = "api-title">Api List</h1>
-        <div class="col-xs-6 col-sm-8 divTableBody">
-          <div class="divTableHeading">
-            <div class="divTableCell">Exchange</div>
-            <div class="divTableCell">Publishable Key</div>
-            <div class="divTableCell">Secret Key</div>
-          </div>
-          <% @apis.each do |api| %>
-          <div class="divTableRow">
-            <div class="divTableCell"><%= api.exchange.name %></div>
-            <div class="divTableCell"><%= api.publishable_key.sub(/(?<=\A.{4})(.*)(?=.{0}\z)/) { |match| '*' * match.length } %></div>
-            <div class="divTableCell"><%= api.secret_key.sub(/(?<=\A.{0})(.*)(?=.{0}\z)/) { |match| '*' * match.length } %></div>
-            <div class="delete"> <%= link_to delete_api_path(api), method: :delete, data: { confirm: "Are You Sure?" } do %>
-              <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          </div>
+      <% @apis.each do |api| %>
+      <div class="divTableRow">
+        <div class="divTableCell"><%= api.exchange.name %></div>
+        <div class="divTableCell"><%= api.publishable_key.sub(/(?<=\A.{4})(.*)(?=.{0}\z)/) { |match| '*' * match.length }.truncate(10, omission:"") %></div>
+        <div class="divTableCell"><%= api.secret_key.sub(/(?<=\A.{0})(.*)(?=.{0}\z)/) { |match| '*' * match.length }.truncate(10, omission: "") %></div>
+        <div class="delete"> <%= link_to delete_api_path(api), method: :delete, data: { confirm: "Are You Sure?" } do %>
+          <i class="far fa-trash-alt"></i>
           <% end %>
         </div>
       </div>
-
+      <% end %>
+    </div>
   </div>
+</div>
 
 
