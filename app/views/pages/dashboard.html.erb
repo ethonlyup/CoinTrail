@@ -1,36 +1,36 @@
 <div class="total-container">
   <h1>Total = <%= @total_sum %></h1>
 </div>
-
-<div class="container">
-  <div class="shadow">
-    <div class="table-container">
-      <table class="table">
-        <thead>
-          <tr>
-            <td class="col" style="transform: translate(14%, 18%)">Coin</td>
-            <td class="col" style="transform: translate(10%, 18%)">Holdings</td>
-            <td class="col" style="transform: translate(17%, 18%)">Price</td>
-            <td class="col" style="transform: translate(14%, 18%)">24hr</td>
-            <td class="col" style="transform: translate(4%, 18%)">Charts</td>
-            <td class="col" style="transform: translate(5%, 18%)">Alerts</td>
-            <td class="col" style="transform: translate(-12%, 18%)">Preferances</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% @total_balance.each do |b| %>
-          <tr>
-          <td><%= image_tag "coinlogos/#{b[:asset].downcase}.png", size: "24", class: "logos" %><br><%= b[:asset] %></td>
-          <td>$<%= b[:total].round(2) %><br><%= b[:holding]%></td>
-          <td>$<%= b[:price] %></td>
-          <td>14% <%= image_tag "redarrow.png", size: "16" %></td>
-          <td><%= image_tag "tradingview-icon.png", size: "36" %> </td>
-          <td><%= image_tag "notification.png" %></td>
-          <td><%= image_tag "gear.png" %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+<div class="tablewrapper">
+  <div class="tablecontainer">
+    <div class="tableheader">
+      <div class="tablerowcolum">Coin</div>
+      <div class="tablerowcolum">Holdings</div>
+      <div class="tablerowcolum">Price</div>
+      <div class="tablerowcolum">24hr</div>
+      <div class="tablerowcolum">Charts</div>
+      <div class="tablerowcolum">Alerts</div>
+      <div class="tablerowcolum">Preferances</div>
+    </div>
+    <div class="tablecontentcontainer">
+      <% @total_balance.each do |b| %>
+      <% arrow_icon = b[:change] < 0 ? "redarrow.png" : "greenarrow.png"  %>
+      <div class="tablerow1">
+        <div class="tablerowcontent">
+          <div class="tablerowcolum"><%= image_tag "coinlogos/#{b[:asset].downcase}.png", size: "24", class: "logos" %><br><%= b[:asset] %></div>
+          <div class="tablerowcolum"><%= b[:total].round(2) %><br><%= b[:holding].round(4)%></div>
+          <div class="tablerowcolum"><%= b[:price] %></div>
+          <div class="tablerowcolum"><%= b[:change] %><%= image_tag arrow_icon, size: "16" %></div>
+          <div class="tablerowcolum"><%= image_tag "tradingview-icon.png", size: "36" %> </div>
+          <div class="tablerowcolum"><%= image_tag "notification.png" %></div>
+          <div class="tablerowcolum"><%= image_tag "gear.png" %></div>
+        </div>
+        <div class="tablehiddenrowcontent">
+          <div class="hiddencontentfirsthalf"></div>
+          <div class="hiddencontentsecondhalf"></div>
+        </div>
+      </div>
+      <% end %>
     </div>
   </div>
 </div>
