@@ -1,12 +1,18 @@
+function getRandomColor() {
+ var letters = '0123456789ABCDEF';
+ var color = '#';
+ for (var i = 0; i < 6; i++) {
+   color += letters[Math.floor(Math.random() * 16)];
+ }
+ return color;
+}
+
 $(function(){
-  $("#bittrexdoughnutChart").drawDoughnutChart([
-    { title: "Tokyo",         value : 120,  color: "#2C3E50" },
-    { title: "San Francisco", value:  80,   color: "#FC4349" },
-    { title: "New York",      value:  70,   color: "#6DBCDB" },
-    { title: "London",        value : 50,   color: "#F7E248" },
-    { title: "Sydney",        value : 40,   color: "#D7DADB" },
-    { title: "Berlin",        value : 20,   color: "#FFF" }
-  ]);
+  var coins = []
+  document.querySelectorAll(".tablerowcontent").forEach(function(b){
+    coins.push({title: b.children[0].children[1].innerText, value: parseFloat(b.children[1].firstChild.data),  color: getRandomColor()},)
+    })
+  $("#doughnutChart").drawDoughnutChart(coins)
 });
 /*!
  * jquery.drawDoughnutChart.js
