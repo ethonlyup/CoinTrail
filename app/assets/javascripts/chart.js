@@ -10,7 +10,7 @@ function getRandomColor() {
 $(function(){
   var coins = []
   document.querySelectorAll(".tablerowcontent").forEach(function(b){
-    coins.push({title: b.children[0].children[1].innerText, value: parseFloat(b.children[1].firstChild.data),  color: getRandomColor()},)
+    coins.push({title: b.children[0].children[1].innerText, value: parseFloat((b.children[1].firstChild.data).replace("$", "")),  color: getRandomColor()},)
     })
   $("#doughnutChart").drawDoughnutChart(coins)
 });
