@@ -35,7 +35,6 @@ body {
 .tablerow {
   height: 10vh;
   width: 100%;
-  background-color: grey;
   transition: all ease 1s;
   cursor: pointer;
 }
@@ -47,6 +46,7 @@ body {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  background-color: #d4dadb;
 }
 
 .tablerow1:hover {
@@ -74,21 +74,7 @@ body {
 .tablehiddenrowcontent {
   display: none;
   justify-content: space-around;
-  height: 70%;
-}
-
-.hiddencontentfirsthalf {
-  height: 100%;
-  width: 40%;
-  background-color: gray;
-  transition: all ease 1s;
-}
-
-.hiddencontentsecondhalf {
-  height: 100%;
-  width: 40%;
-  background-color: gray;
-  transition: all ease 1s;
+  height: 500px;
 }
 
 .tablerow1:nth-child(even) {
@@ -112,73 +98,7 @@ body {
 .end {
   margin-right: 16px;
 }
-// .container {
-//   max-width: 100%;
-//   padding-left: 13vh;
-//   width: 100%;
-//   margin: auto;
-//   padding-right: 13vh;
-// }
 
-// .total-container {
-//   justify-content: center;
-//   align-content: center;
-//   max-width: 100%;
-//   padding-left: 13vh;
-//   padding-right: 13vh;
-//   width: 100%;
-//   margin: auto;
-// }
-
-// thead {
-//   font-family: Lato-Bold;
-//   font-size: 18px;
-//   color: #fff;
-//   line-height: 1.4;
-//   background-color: #6c7ae0;
-//   padding-left: 0px;
-//   padding-top: 15px;
-//   padding-bottom: 15px;
-// }
-
-// .shadow {
-//   box-shadow: 3px 3px #999;
-//   width: 100%;
-//   border-radius: 10px;
-//   overflow: hidden;
-//   height: 66vh;
-// }
-
-// thead td {
-//   height: 10vh;
-// }
-
-// tbody td {
-//   padding-left: 31px !important;
-// }
-
-
-
-
-// tbody {
-//   display: block;
-//   height: 56vh;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-// }
-
-// thead, tbody tr {
-//   display: table;
-//   width: 101%;
-//   table-layout: fixed;
-// }
-
-
-// .table-container {
-//   height: 75vh;
-//   margin-bottom: -15vh;
-// }
-
-// .logos {
-//   margin-left: 4%;
-// }
+.chart {
+  height: 50vh;
+}
