@@ -84,3 +84,40 @@ a.bttn {
     }
   }
 }
+
+
+.buttonfx{
+  color: white; /* button text color */
+  outline: none;
+  background: $secondary-color;
+  border: none;
+  border-bottom: 4px solid #eee;
+  letter-spacing: 0.0625em;
+  padding: 8px 10px;
+  text-transform: uppercase;
+  font: bold 16px 'Roboto', serif; /* use google font */
+  line-height: 2;
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-decoration: none; /* remove underline if using A instead of BUTTON tag */
+  overflow: hidden;
+  transition: all .5s;
+  border-radius: 2%;
+}
+.angleinleft:after{
+  width: 200%;
+  transform-origin: 0 bottom;
+  transform: translate3D(-50%,0,0) rotate(-50deg);
+}
+
+.angleinleft:hover:after{
+  transform: rotate(0deg);
+  transition: all .5s;
+}
+.bouncein:hover:before,
+.bouncein:hover:after{
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66) !important;
+}
