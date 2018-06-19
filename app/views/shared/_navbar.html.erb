@@ -67,7 +67,7 @@
                 <h3><b>Register</b></h3>
               </div>
 <!--               <form id="ajax-register-form" role="form" autocomplete="off"> -->
-                <%= simple_form_for(:user, :url => registration_path(:user), html: { id: "ajax-register-form", role: "form", autocomplete: "off" })  do |f| %>
+                <%= simple_form_for(:user, :url => registration_path(:user), html: { id: "ajax-register-form", role: "form", autocomplete: "on" })  do |f| %>
                 <%= f.error_notification %>
 <!--                 <div class="form-group">
                   <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
@@ -99,7 +99,7 @@
               <div class="text-center">
                 <h3><b>Log In</b></h3>
               </div>
-              <%= simple_form_for(:user, :url => session_path(:user), html: { id: "ajax-login-form", role: "form", autocomplete: "off" })  do |f| %>
+              <%= simple_form_for(:user, :url => session_path(:user), html: { id: "ajax-login-form", role: "form", autocomplete: "on" })  do |f| %>
                 <div class="form-group">
                   <p> <%= f.input :email, required: false, autofocus: true, html: { class: "form-control", tabindex: "1", name: "email", id:"email", placeholder: "Email", autocomplete: "off"} %></p>
                 </div>

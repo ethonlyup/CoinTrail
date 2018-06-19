@@ -81,9 +81,11 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 //     content: "";
 //     display: table;
 // }
-.card h-100{
+.card.h-100{
   display:flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 .card-body{
   display: flex;
@@ -91,7 +93,7 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 }
 
 .card-img-top{
-    margin-bottom: 35px;
+    margin-bottom: 10px;
   }
 
 @media only screen and (min-width: 1030px){
