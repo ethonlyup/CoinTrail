@@ -7,7 +7,7 @@
   margin-right: 40px;
 }
 .navbar{
-  background-color: $third-color;
+  background-color: #191930;
   margin-bottom: 0 !important;
   height: 60px;
   // border-bottom-left-radius: 20px 10px;
@@ -63,6 +63,10 @@ ul.nav.navbar-nav.navbar-center{
   .dropdown-lr label {
     color: black;
   }
+}
+
+.brand-name {
+ font-family: "Courier new";
 }
 
 // /* Main navbar */
