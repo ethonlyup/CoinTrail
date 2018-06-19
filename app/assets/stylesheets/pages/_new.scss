@@ -17,6 +17,9 @@
   margin-top: 0%;
   margin-bottom: 3%;
 }
+#api-list{
+  position: static;
+}
 // #panel-add{
 //   display: flex;
 //   margin-top: 3%;
@@ -42,7 +45,7 @@
   margin-top: 5%;
   text-align: left;
   border-collapse: collapse;
-  left: 4%;
+  margin-left: 12%;
 }
 .divTableRow {
   display: table-row;
