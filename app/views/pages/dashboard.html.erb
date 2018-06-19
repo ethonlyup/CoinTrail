@@ -1,5 +1,7 @@
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
 <div class="total-container">
-  <h1>Total = <%= @total_sum %></h1>
+  <h1>Total = $<%= @total_sum %></h1>
 </div>
 <div class="tablewrapper">
   <div class="tablecontainer">
@@ -18,16 +20,17 @@
       <div class="tablerow1">
         <div class="tablerowcontent">
           <div class="tablerowcolum indentrow"><%= image_tag "coinlogos/#{b[:asset].downcase}.png", size: "24", class: "logos" %><div><%= b[:asset] %></div></div>
-          <div class="tablerowcolum indentrow"><%= b[:total].round(2) %><div><%= b[:holding].round(4)%></div></div>
-          <div class="tablerowcolum"><%= b[:price].round(4) %></div>
+          <div class="tablerowcolum indentrow">$<%= b[:total].round(2) %><div><%= b[:holding].round(4)%></div></div>
+          <div class="tablerowcolum">$<%= b[:price].round(4) %></div>
           <div class="tablerowcolum"><%= b[:change] %><%= image_tag arrow_icon, size: "16" %></div>
-          <div class="tablerowcolum"><%= image_tag "tradingview-icon.png", size: "36" %> </div>
+          <div class="tablerowcolum tradingview"><%= image_tag "tradingview-icon.png", size: "36" %> </div>
           <div class="tablerowcolum"><%= image_tag "notification.png" %></div>
           <div class="tablerowcolum"><%= image_tag "gear.png" %></div>
         </div>
         <div class="tablehiddenrowcontent">
-          <div class="hiddencontentfirsthalf"></div>
-          <div class="hiddencontentsecondhalf"></div>
+          <div class="tradingview-widget-container">
+            <div id="<%= b[:asset] %>" class="chart"></div>
+          </div>
         </div>
       </div>
       <% end %>
