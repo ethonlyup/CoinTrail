@@ -69,9 +69,6 @@ GEM
       nokogiri
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    cryptocompare (0.14.0)
-      faraday
-      json
     cryptoexchange (0.22.0)
       http (~> 3.0.0)
       lru_redux
@@ -252,7 +249,6 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass (~> 3.3)
   coinmarketcap
-  cryptocompare
   cryptoexchange
   devise
   figaro
