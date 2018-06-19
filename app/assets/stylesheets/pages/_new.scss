@@ -1,33 +1,48 @@
-.api-new{
-  margin-top: 10%;
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* API boxes */
+
+#panel-add{
+  // margin-top: 10%;
+  // width: 75%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  text-align: center;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  position: absolute;
+  top: 13%;
+  right: 12%;
 }
-#panel-add{
-  display: flex;
-  margin-top: 3%;
+#api-title {
+  margin-left: 2%;
+  margin-top: 0%;
+  margin-bottom: 3%;
 }
-#panel-add{
-  input{
-    width: 267.5%;
-  }
-}
-#panel-show{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5%;
-}
+// #panel-add{
+//   display: flex;
+//   margin-top: 3%;
+// }
+// #panel-add{
+//   input{
+//     width: 267.5%;
+//   }
+// }
+// #panel-show{
+//   display: flex;
+//   justify-content: space-between;
+//   margin-top: 5%;
+// }
+// .api-new {
+//   margin-left: 10%;
+// }
 
 /* DivTable.com */
 .divTable{
   display: table;
-  width: 200%;
+  // width: 200%;
   margin-top: 5%;
   text-align: left;
   border-collapse: collapse;
+  left: 4%;
 }
 .divTableRow {
   display: table-row;
@@ -62,11 +77,4 @@
   margin-left: 35%;
 }
 
-.api-new {
-  margin-left: 10%;
-}
-
-#api {
-  margin-left: 20%;
-}
 
