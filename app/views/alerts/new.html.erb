@@ -2,7 +2,8 @@
   <div class="col-xs-2 col-sm-4" id="panel-add">
     <h2>Add your Alert</h2>
     <%= simple_form_for @alert do |f|  %>
-    <p><label for=""><%= f.input :coin_name, label: "Symbol" %></label></p>
+    <h3><%= @coin_name %>  $<%= @coin_price %></h3>
+    <%= f.hidden_field :coin_name, value: @coin_name %>
     <p><label for=""><%= f.input :price_above %></label></p>
     <p><label for=""><%= f.input :price_below %></label></p>
     <%= f.button :submit, class: "buttonfx angleinleft" %>
@@ -19,7 +20,7 @@
       </div>
       <% @alerts.each do |alert| %>
       <div class="divTableRow">
-       <div class="divTableCell alert"><%= alert.coin_name %></div>
+       <div class="divTableCell alert"><%= image_tag "coinlogos/#{alert.coin_name.downcase}.png", size: "24", class: "logos" %><%= alert.coin_name %></div>
        <div class="divTableCell alert"><%= alert.price_above%></div>
        <div class="divTableCell alert"><%= alert.price_below %></div>
        <div class="delete"> <%= link_to delete_alert_path(alert), method: :delete, data: { confirm: "Are You Sure?" } do %>

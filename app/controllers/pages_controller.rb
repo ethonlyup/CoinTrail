@@ -2,9 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    # if user_signed_in?
-    #   redirect_to dashboard_path
-    # end
   end
 
   def market_api
@@ -51,7 +48,8 @@ class PagesController < ApplicationController
         price: market_price(b),
         holding: (b[:locked].to_f + b[:free].to_f).round(5),
         total: (b[:locked].to_f + b[:free].to_f) * market_price(b),
-        change: market_change(b)
+        change: market_change(b),
+        alert: Alert.where(user: current_user, coin_name: b[:asset]).present?
       }
     end
   end
