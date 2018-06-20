@@ -77,9 +77,15 @@ ul.nav.navbar-nav.navbar-center{
 }
 
 .brand-name {
- font-family: "Courier new";
+ font-family: "Raleway";
 }
 
+#center-links {
+  font-family: "Raleway";
+}
+#center-links li {
+  margin-right: 9vw;
+}
 // /* Main navbar */
 // .navbar {
 //   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
