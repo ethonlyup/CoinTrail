@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 body {
@@ -47,14 +48,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #d4dadb;
-}
-
-.tablerow1:hover {
-  opacity: 0.8;
-}
-
-.tablerow:hover {
-  opacity: 0.8;
 }
 
 .tablecontentcontainer {

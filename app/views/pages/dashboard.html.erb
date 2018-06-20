@@ -1,9 +1,9 @@
 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-
-<div class="total-container">
-  <h1>Total = $<%= @total_sum %></h1>
-</div>
 <div class="tablewrapper">
+  <div>  
+    <input type="search" name="search" id="search">
+    <input type="submit" name="submit" id="submit">
+  </div>
   <div class="tablecontainer">
     <div class="tableheader">
       <div class="tablerowcolum">Coin</div>
@@ -11,8 +11,7 @@
       <div class="tablerowcolum">Price</div>
       <div class="tablerowcolum">24hr</div>
       <div class="tablerowcolum">Charts</div>
-      <div class="tablerowcolum">Alerts</div>
-      <div class="tablerowcolum end">Preferances</div>
+      <div class="tablerowcolum end">Alerts</div>
     </div>
     <div class="tablecontentcontainer">
       <% @total_balance.each do |b| %>
@@ -22,10 +21,9 @@
           <div class="tablerowcolum indentrow"><%= image_tag "coinlogos/#{b[:asset].downcase}.png", size: "24", class: "logos" %><div><%= b[:asset] %></div></div>
           <div class="tablerowcolum indentrow">$<%= b[:total].round(2) %><div><%= b[:holding].round(4)%></div></div>
           <div class="tablerowcolum">$<%= b[:price].round(4) %></div>
-          <div class="tablerowcolum"><%= b[:change] %><%= image_tag arrow_icon, size: "16" %></div>
+          <div class="tablerowcolum"><%= b[:change] %>%<%= image_tag arrow_icon, size: "16" %></div>
           <div class="tablerowcolum tradingview"><%= image_tag "tradingview-icon.png", size: "36" %> </div>
           <div class="tablerowcolum"><%= image_tag "notification.png" %></div>
-          <div class="tablerowcolum"><%= image_tag "gear.png" %></div>
         </div>
         <div class="tablehiddenrowcontent">
           <div class="tradingview-widget-container">
