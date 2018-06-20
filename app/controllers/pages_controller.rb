@@ -69,7 +69,8 @@ def bittrex_balance
         asset: b.raw["Currency"],
         price: market_price(b),
         holding: b.available,
-        total: b.available * market_price(b)
+        total: b.available * market_price(b),
+        alert: Alert.where(user: current_user, coin_name: b.raw["Currency"]).present?
       }
     end
   end
@@ -86,7 +87,8 @@ def set_total
        price: market_price(b),
        holding: total,
        total: total * market_price(b),
-       change: market_change(b)
+       change: market_change(b),
+       alert: Alert.where(user: current_user, coin_name: b[:asset]).present?
      }
    else
     @total_balance << b
