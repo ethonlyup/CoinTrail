@@ -3,7 +3,7 @@
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 
 <div class="tablewrapper">
-  <div class="searchbar">  
+  <div class="searchbar">
     <input type="search" name="search" id="search" placeholder="Search by ticker">
   </div>
   <div class="tablecontainer">
@@ -17,6 +17,9 @@
     </div>
     <div class="tablecontentcontainer">
       <% @total_balance.each do |b| %>
+      <% alert_icon = b[:alert] == true ? "notification_on.png" : "notification.png"  %>
+
+
       <% arrow_icon = b[:change] < 0 ? "redarrow.png" : "greenarrow.png"  %>
       <div class="tablerow1">
         <div class="tablerowcontent">
@@ -25,7 +28,7 @@
           <div class="tablerowcolum">$<%= b[:price].round(4) %></div>
           <div class="tablerowcolum"><%= b[:change] %>%<%= image_tag arrow_icon, size: "16" %></div>
           <div class="tablerowcolum tradingview"><%= image_tag "tradingview-icon.png", size: "36" %> </div>
-          <div class="tablerowcolum"><%= image_tag "notification.png" %></div>
+          <div class="tablerowcolum"><%= link_to(image_tag(alert_icon), new_alert_path(coin_name: b[:asset], coin_price: b[:price]))%></div>
         </div>
         <div class="tablehiddenrowcontent">
           <div class="tradingview-widget-container">
@@ -37,4 +40,3 @@
     </div>
   </div>
 </div>
-
