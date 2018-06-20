@@ -1,17 +1,17 @@
 <div class="new-api-page">
-    <% if @exchanges.present? %>
-      <div class="col-xs-2 col-sm-4" id="panel-add">
+  <% if @exchanges.present? %>
+  <div class="col-xs-2 col-sm-4" id="panel-add">
     <h2>Add your API</h2>
     <%= simple_form_for @api do |f| %>
     <%= f.collection_select :exchange_id, @exchanges, :id, :name, prompt: "Select Exchange", label:false %>
     <p><label for="publishable_key"><%= f.input :publishable_key %></label></p>
     <p><label for="secret_key"><%= f.input :secret_key %></label></p>
-      <%= f.button :submit, class: "buttonfx angleinleft bouncein" %>
+    <%= f.button :submit, class: "buttonfx angleinleft" %>
     <% end %>
   </div>
   <% end %>
-        <div class="col-xs-4 col-sm-6 divTable" id="api-list">
-    <h3 id = "api-title">Api List</h3>
+  <div class="col-xs-4 col-sm-6 divTable" id="api-list">
+    <h3 id = "api-title">API List</h3>
     <div class="col-xs-6 col-sm-8 divTableBody">
       <div class="divTableHeading">
         <div class="divTableCell">Exchange</div>
@@ -31,4 +31,4 @@
       <% end %>
     </div>
   </div>
-  </div>
+</div>

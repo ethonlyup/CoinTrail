@@ -1,35 +1,33 @@
-<div class="container">
-  <div class="alert-new">
-    <div class="col-xs-6 col-sm-8">
-      <h1 id = "alert">Alerts</h1>
-      <div class="col-sm-8" id="panel-add">
-        <%= simple_form_for @alert do |f| %>
-        <%= f.input :coin_name, label: "Symbol" %>
-        <%= f.input :price_above %>
-        <%= f.input :price_below %>
-        <%= f.button :submit %>
+<div class="alert-new">
+  <div class="col-xs-2 col-sm-4" id="panel-add">
+    <h2>Add your Alert</h2>
+    <%= simple_form_for @alert do |f|  %>
+    <p><label for=""><%= f.input :coin_name, label: "Symbol" %></label></p>
+    <p><label for=""><%= f.input :price_above %></label></p>
+    <p><label for=""><%= f.input :price_below %></label></p>
+    <%= f.button :submit, class: "buttonfx angleinleft" %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-4 col-sm-6 divTable" id="alert-list">
+    <h2 id = "alert-title">Alerts</h2>
+    <div class="col-xs-6 col-sm-8 divTableBody">
+      <div class="divTableHeading">
+        <div class="divTableCell">Coin</div>
+        <div class="divTableCell">Price Above</div>
+        <div class="divTableCell">Price Below</div>
       </div>
-      <% end %>
-      <div class="col-xs-6 col-sm-8 divTable" id="api-list">
-        <div class="col-lg-8 divTableBody">
-          <div class="divTableHeading">
-            <div class="divTableCell">Coin</div>
-            <div class="divTableCell">Price Above</div>
-            <div class="divTableCell">Price Below</div>
-          </div>
-          <% @alerts.each do |alert| %>
-          <div class="divTableRow">
-            <div class="divTableCell"><%= alert.coin_name %></div>
-            <div class="divTableCell"><%= alert.price_above%></div>
-            <div class="divTableCell"><%= alert.price_below %></div>
-            <div class="delete"> <%= link_to delete_alert_path(alert), method: :delete, data: { confirm: "Are You Sure?" } do %>
-              <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          </div>
-          <% end %>
-        </div>
+      <% @alerts.each do |alert| %>
+      <div class="divTableRow">
+       <div class="divTableCell alert"><%= alert.coin_name %></div>
+       <div class="divTableCell alert"><%= alert.price_above%></div>
+       <div class="divTableCell alert"><%= alert.price_below %></div>
+       <div class="delete"> <%= link_to delete_alert_path(alert), method: :delete, data: { confirm: "Are You Sure?" } do %>
+        <i class="far fa-trash-alt"></i>
+        <% end %>
       </div>
     </div>
+    <% end %>
   </div>
+</div>
 </div>

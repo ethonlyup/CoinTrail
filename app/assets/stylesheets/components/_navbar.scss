@@ -1,14 +1,25 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
 .wrapper{
-  background-color: $main-color;
+  background-color: $forth-color;
 }
 .container-fluid{
   margin-left: 40px;
   margin-right: 40px;
 }
+.navbar-color{
+  background-color: $forth-color !important;
+}
+.navbar-transparent{
+  position: fixed;
+  background-color: transparent !important;
+  transition: 0.5s background-color ease;
+}
 .navbar{
-  background-color: #191930;
+  position: fixed;
+  background-color: $forth-color;
   margin-bottom: 0 !important;
+  border: none;
+  width: 100vw;
   height: 60px;
   // border-bottom-left-radius: 20px 10px;
   // border-bottom-right-radius: 20px 10px;

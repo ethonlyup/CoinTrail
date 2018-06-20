@@ -28,8 +28,7 @@
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <!-- stats.js lib -->
 <!-- <script src="http://threejs.org/examples/js/libs/stats.min.js"></script> -->
-  <p></p>
-  <div>
+  <div id = "typed-text">
     <div id="typed-strings">
       <p>Track your Crypto Portfolio</p><br>
       <p>Across <em>any</em> exchange</p><br>
@@ -101,6 +100,23 @@
   <% end %>
 </div>
 
-
+<script>
+  function initUpdateNavbarOnScroll() {
+  const navbar = document.querySelector('.navbar');
+  navbar.classList.add("navbar-transparent")
+  if (navbar) { 
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= window.innerHeight) {
+        navbar.classList.add('navbar-color');
+        navbar.classList.remove("navbar-transparent")
+      } else {
+        navbar.classList.remove('navbar-color');
+        navbar.classList.add("navbar-transparent")
+      }
+    });
+  }
+}
+initUpdateNavbarOnScroll();
+</script>
 
 
