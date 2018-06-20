@@ -1,16 +1,19 @@
-function getRandomColor() {
- var letters = '0123456789ABCDEF';
- var color = '#';
- for (var i = 0; i < 6; i++) {
-   color += letters[Math.floor(Math.random() * 16)];
- }
- return color;
-}
+// function getRandomColor() {
+//  var letters = '0123456789ABCDEF';
+//  var color = '#';
+//  for (var i = 0; i < 6; i++) {
+//    color += letters[Math.floor(Math.random() * 16)];
+//  }
+//  return color;
+// }
 
 $(function(){
   var coins = []
+ 
   document.querySelectorAll(".tablerowcontent").forEach(function(b){
-    coins.push({title: b.children[0].children[1].innerText, value: parseFloat((b.children[1].firstChild.data).replace("$", "")),  color: getRandomColor()},)
+    var colors = ["#f9075f","#aa1665","#002e84", "#5d006b", "#e9dafe", "#633567"];
+    var rand = colors[Math.floor(Math.random() * colors.length)];
+    coins.push({title: b.children[0].children[1].innerText, value: parseFloat((b.children[1].firstChild.data).replace("$", "")),  color: rand})
     })
   $("#doughnutChart").drawDoughnutChart(coins)
 });
@@ -255,3 +258,8 @@ $(function(){
     return $this;
   };
 })(jQuery);
+
+
+setTimeout(function(){
+  document.querySelector(".doughnutSummaryNumber").innerText = '$' + document.querySelector(".doughnutSummaryNumber").innerText 
+ }, 2000);
