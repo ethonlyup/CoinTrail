@@ -24,7 +24,7 @@ class AlertsController < ApplicationController
     @alerts = Alert.where(user: current_user)
     @alert = Alert.new
     @coin_name = params[:coin_name]
-    @coin_price = params[:coin_price].to_f.round(0)
+    @coin_price = params[:coin_price].to_f.round(2)
   end
 
   def show
