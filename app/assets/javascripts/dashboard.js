@@ -36,7 +36,15 @@
 })
  });
 
- document.querySelectorAll('.tradingview-widget-container').forEach(function(widget){
-  widget.style.width = "100%";
-  widget.style.height = "50vh";
-})
+document.getElementById("search").addEventListener("keyup", function(){
+  let search = document.getElementById("search").value.toUpperCase();
+  document.querySelectorAll('.tablerow1').forEach(function(row){
+    if(search == row.children[0].children[0].children[1].innerText){
+      row.style.display = "flex";
+    }else if(search == ""){
+      row.style.display = "flex";
+    }else {
+      row.style.display = "none";
+    }
+  })
+});
