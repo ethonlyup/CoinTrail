@@ -1,5 +1,6 @@
-import Typed from 'typed.js';
 
+import Typed from 'typed.js';
+// if (window.location.pathname == '/') {
 function loadDynamicBannerText() {
   new Typed('#typed6', {
     stringsElement: '#typed-strings',
@@ -12,3 +13,4 @@ function loadDynamicBannerText() {
 }
 
 export { loadDynamicBannerText };
+// };

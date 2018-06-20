@@ -1,6 +1,6 @@
 body {
   background: #222428;
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 .dochart {
 position: relative;
@@ -62,6 +62,7 @@ margin: 0 !important;
   // margin-top: -27%;
   font-size: 22px;
   letter-spacing: .06em;
+  color: white;
 }
 .doughnutSummaryNumber {
   // position: absolute;
@@ -69,6 +70,7 @@ margin: 0 !important;
   // width: 100%;
   // margin-top: -15%;
   font-size: 55px;
+  color: white;
 }
 .chart path:hover { opacity: 0.65; }
 

@@ -12,9 +12,9 @@
 .navbar-transparent{
   position: fixed;
   background-color: transparent !important;
-  transition: 0.5s background-color ease;
 }
 .navbar{
+  transition: 0.7s background-color ease;
   position: fixed;
   background-color: $forth-color;
   margin-bottom: 0 !important;
@@ -39,6 +39,7 @@
   font-size: 18px;
   text-decoration: none;
   display: inline-block;
+  font-family: "Raleway"; 
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
     color: #262626;
@@ -86,6 +87,7 @@ ul.nav.navbar-nav.navbar-center{
 #center-links li {
   margin-right: 9vw;
 }
+
 // /* Main navbar */
 // .navbar {
 //   // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
