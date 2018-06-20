@@ -19,7 +19,7 @@
   margin-top: 0%;
   margin-bottom: 3%;
 }
-#api-list{
+#api-list #alert-list{
   position: static;
 }
 #api-list h3{
@@ -50,7 +50,7 @@
 //   margin-top: 40%;
 // }
 #panel-add h2 {
-  background: $secondary-color;
+  background: $main-color;
   border-radius: 20px 20px 0 0;
   color: #fff;
   font-size: 28px;
@@ -119,10 +119,12 @@
   width: 32.5%;
 }
 .divTableCell.api{
-  color: $third-color;
+  color: $forth-color;
+}.divTableCell.alert{
+  color: $forth-color;
 }
 .divTableHeading {
-  background-color: #191930;
+  background-color: $main-color;
   display: table-header-group;
   color: white;
 }
