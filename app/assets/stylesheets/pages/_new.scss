@@ -17,27 +17,27 @@ body{
   right: 12%;
   border-radius: 5%;
   background: ghostwhite;
+  margin-top: 5%;
 }
-#api-title {
+#api-title, #alert-title {
   margin-left: 2%;
   margin-top: 0%;
   margin-bottom: 3%;
+  color: ghostwhite;
+  font-size: 48px;
 }
 #api-list {
   position: static;
+  margin-top: 7%;
 }
 #alert-list{
   position: static;
   display: table;
   // width: 200%;
-  margin-top: 5%;
+  margin-top: 10%;
   text-align: left;
   border-collapse: collapse;
   margin-left: -16%;
-}
-#api-title{
-  color: ghostwhite;
-  font-size: 48px;
 }
 // #panel-add{
 //   display: flex;
