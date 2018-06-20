@@ -1,6 +1,9 @@
 /* API boxes */
-
-
+body{
+  background-image: url('sarah.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #panel-add{
   // margin-top: 10%;
   // width: 75%;
@@ -13,17 +16,27 @@
   top: 13%;
   right: 12%;
   border-radius: 5%;
+  background: ghostwhite;
 }
 #api-title {
   margin-left: 2%;
   margin-top: 0%;
   margin-bottom: 3%;
 }
-#api-list #alert-list{
+#api-list {
   position: static;
 }
-#api-list h3{
-  color: $third-color;
+#alert-list{
+  position: static;
+  display: table;
+  // width: 200%;
+  margin-top: 5%;
+  text-align: left;
+  border-collapse: collapse;
+  margin-left: -16%;
+}
+#api-title{
+  color: ghostwhite;
   font-size: 48px;
 }
 // #panel-add{
@@ -106,27 +119,34 @@
   // width: 200%;
   margin-top: 5%;
   text-align: left;
-  border-collapse: collapse;
+  // border-collapse: collapse;
   margin-left: 12%;
+}
+.divTableHeading :first-child {
+  border-top-left-radius: 10px;
+}.divTableHeading :last-child {
+  border-top-right-radius: 10px;
 }
 .divTableRow {
   display: table-row;
 }
 .divTableCell, .divTableHead {
-  border: 1px solid #999999;
   display: table-cell;
+  border: 0.5px solid #999999;
   padding: 3px 10px;
   width: 32.5%;
+  font-size: 24px;
 }
 .divTableCell.api{
-  color: $forth-color;
-}.divTableCell.alert{
-  color: $forth-color;
+  color: ghostwhite;
+}
+.divTableCell.alert{
+  color: ghostwhite;
 }
 .divTableHeading {
-  background-color: $main-color;
+  background-color: ghostwhite;
   display: table-header-group;
-  color: white;
+  color: $forth-color;
 }
 .divTableBody {
   display: table-row-group;
