@@ -28,7 +28,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    if current_user.apis.exists?
+    if current_user.apis.length == 2
       market_api
       binance_balance
       bittrex_balance
