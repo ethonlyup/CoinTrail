@@ -2,9 +2,6 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    # if user_signed_in?
-    #   redirect_to new_api_path
-    # end
   end
 
   def market_api
