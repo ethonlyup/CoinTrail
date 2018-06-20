@@ -48,3 +48,7 @@ document.getElementById("search").addEventListener("keyup", function(){
     }
   })
 });
+
+document.querySelector(".dropdown-toggle").addEventListener('click', function(){
+  document.querySelector(".dropdown-toggle").parentNode.classList.add('open')
+});

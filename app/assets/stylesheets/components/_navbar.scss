@@ -12,9 +12,9 @@
 .navbar-transparent{
   position: fixed;
   background-color: transparent !important;
-  transition: 0.5s background-color ease;
 }
 .navbar{
+  transition: 0.7s background-color ease;
   position: fixed;
   background-color: $forth-color;
   margin-bottom: 0 !important;
@@ -39,6 +39,7 @@
   font-size: 18px;
   text-decoration: none;
   display: inline-block;
+  font-family: "Raleway"; 
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
     color: #262626;
@@ -77,7 +78,14 @@ ul.nav.navbar-nav.navbar-center{
 }
 
 .brand-name {
- font-family: "Courier new";
+ font-family: "Raleway";
+}
+
+#center-links {
+  font-family: "Raleway";
+}
+#center-links li {
+  margin-right: 9vw;
 }
 
 // /* Main navbar */
