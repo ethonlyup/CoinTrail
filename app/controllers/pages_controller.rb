@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      redirect_to dashboard_path
+      redirect_to new_api_path
     end
   end
 
