@@ -3,8 +3,8 @@
   background-color: $forth-color;
 }
 .container-fluid{
-  margin-left: 40px;
-  margin-right: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 .navbar-color{
   background-color: $forth-color !important;
@@ -21,16 +21,21 @@
   border: none;
   width: 100vw;
   height: 60px;
-  // border-bottom-left-radius: 20px 10px;
-  // border-bottom-right-radius: 20px 10px;
   color: $light-gray;
 }
 #navbar{
+  display: flex !important;
+  justify-content: flex-end;
+  width: 66.666vw;
   color: $light-gray;
   text-align:center;
   vertical-align: center;
+  margin-right: 10px;
 }
 .navbar-header{
+  display: flex;
+  justify-content: flex-start;
+  width: 33.333vw;
   font-size: 24px;
   margin-top: 5px;
 }
@@ -42,19 +47,22 @@
   font-family: "Raleway"; 
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-    color: #262626;
-    text-decoration: none;
-    background-color: #e5e5e5;
-    display: initial;
-    left: auto;
+  color: #262626;
+  text-decoration: none;
+  background-color: #e5e5e5;
+  display: initial;
+  left: auto;
 }
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-    background-color: $secondary-color !important;
+  background-color: $secondary-color !important;
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-    background-color: $secondary-color !important;
+  background-color: $secondary-color !important;
 }
 #right-dropdown {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
   color: black !important;
 }
 ul.dropdown-lr {
@@ -82,10 +90,13 @@ ul.nav.navbar-nav.navbar-center{
 }
 
 #center-links {
+  width: 51%;
+  display: flex;
+  justify-content: center;
   font-family: "Raleway";
-}
-#center-links li {
-  margin-right: 9vw;
+  li{
+    font: bold 16px;
+  }
 }
 
 // /* Main navbar */

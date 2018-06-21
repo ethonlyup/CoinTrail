@@ -12,7 +12,7 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 .banner{
   // background: url("https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=1950&q=80");
   background-image: url("https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
-");
+    ");
   background-size: cover;
   background-repeat: no-repeat;
   line-height: 4;
@@ -93,8 +93,8 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 }
 
 .card-img-top{
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
+}
 
 @media only screen and (min-width: 1030px){
   .banner-learnmore{
@@ -107,12 +107,35 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
 
 #typed-text{
   margin-top: 20vh;
-  margin-right: 2vw;
+  margin-right: 5vw;
 }
 
-@media(max-width: 600px){
+#center-links a {
+  margin-right: 38%;
+}
+
+.flexy{
+  margin-right: 80px;
+}
+
+@media(max-width: 1030px){
+
+  html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    overflow-y: hidden;
+  }
+  .navbar{
+    display:none;
+  }
+
   .coin{
-    display: none;
+    margin-right: 43%;
+    margin-top: 12%;
+  }
+  .footer{
+    display: none !important;
   }
 
   .banner{
@@ -130,11 +153,11 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
   .container{
     display: none !important;
   }
- 
+
   .mobile-banner{
   // background: url("https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=1950&q=80");
   background-image: url("https://images.pexels.com/photos/755726/pexels-photo-755726.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260
-");
+    ");
   background-size: cover;
   background-repeat: no-repeat;
   line-height: 4;
@@ -148,10 +171,22 @@ body{background:#ecf0f1; font-family: 'Roboto', serif; margin:0; color:#888; hei
   justify-content: center;
   flex-direction: column;
   box-shadow: 0 0 5px #333;
+  p {
+    font-size: 18px;
+    font-family: Raleway;
+  }
 }
 
-.home{
-  display:none;
+.banner-signup{
+  display: none;
 }
 
 }
+
+@media(max-width: 600px){
+  .coin{
+    margin-right: 29%;
+    margin-top: 31%;
+  }
+}
+
