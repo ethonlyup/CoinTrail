@@ -18,8 +18,6 @@
     <div class="tablecontentcontainer">
       <% @total_balance.each do |b| %>
       <% alert_icon = b[:alert] == true ? "notification_on.png" : "notification.png"  %>
-
-
       <% arrow_icon = b[:change] < 0 ? "redarrow.png" : "greenarrow.png"  %>
       <div class="tablerow1">
         <div class="tablerowcontent">

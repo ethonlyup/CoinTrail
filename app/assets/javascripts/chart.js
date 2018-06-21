@@ -1,44 +1,8 @@
-// function getRandomColor() {
-//  var letters = '0123456789ABCDEF';
-//  var color = '#';
-//  for (var i = 0; i < 6; i++) {
-//    color += letters[Math.floor(Math.random() * 16)];
-//  }
-//  return color;
-// }
-// (function() {
-//    var startingTime = new Date().getTime();
-//    // Load the script
-//    var script = document.createElement("SCRIPT");
-//    script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js';
-//    script.type = 'text/javascript';
-//    document.getElementsByTagName("head")[0].appendChild(script);
-
-//    // Poll for jQuery to come into existance
-//    var checkReady = function(callback) {
-//        if (window.jQuery) {
-//            callback(jQuery);
-//        }
-//        else {
-//            window.setTimeout(function() { checkReady(callback); }, 20);
-//        }
-//    };
-
-//    // Start polling...
-//    checkReady(function($) {
-//        $(function() {
-//            var endingTime = new Date().getTime();
-//            var tookTime = endingTime - startingTime;
-//            window.alert("jQuery is loaded, after " + tookTime + " milliseconds!");
-//        });
-//    });
-// })();
-
 $(function(){
   var coins = []
- 
+
   document.querySelectorAll(".tablerowcontent").forEach(function(b){
-    var colors = ["#f9075f","#aa1665","#002e84", "#5d006b", "#e9dafe", "#633567"];
+    var colors = ["#F6511D", "#00AFD7", "#7FB800", "#FFB400", "#575C55", "#FBBFCA", "#D2BF55", "#F15156", "#2C5530", "#83BCA9", "#A5402D"];
     var rand = colors[Math.floor(Math.random() * colors.length)];
     coins.push({title: b.children[0].children[1].innerText, value: parseFloat((b.children[1].firstChild.data).replace("$", "")),  color: rand})
     })
@@ -52,7 +16,7 @@ $(function(){
  * Copyright 2014 hiro
  * https://github.com/githiro/drawDoughnutChart
  * Released under the MIT license.
- * 
+ *
  */
 ;(function($, undefined) {
   $.fn.drawDoughnutChart = function(data, options) {
@@ -140,7 +104,7 @@ $(function(){
     var summarySize = (cutoutRadius - (doughnutRadius - cutoutRadius)) * 2,
         $summary = $('<div class="' + settings.summaryClass + '" />')
                    .appendTo($this)
-                   .css({ 
+                   .css({
                      width: summarySize + "px",
                      height: summarySize + "px",
                      "margin-left": -(summarySize / 2) + "px",
@@ -288,5 +252,5 @@ $(function(){
 
 
 setTimeout(function(){
-  document.querySelector(".doughnutSummaryNumber").innerText = '$' + document.querySelector(".doughnutSummaryNumber").innerText 
+  document.querySelector(".doughnutSummaryNumber").innerText = '$' + document.querySelector(".doughnutSummaryNumber").innerText
  }, 2000);
