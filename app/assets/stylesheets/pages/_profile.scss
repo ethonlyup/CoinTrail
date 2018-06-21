@@ -127,4 +127,63 @@ input {
 
 #profile fieldset input[type="submit"]:hover {
   background: #28ad63;
+
+}#edit-profile{
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  width: 120%;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
+#edit-profile h2 {
+  background: $secondary-color;
+  border-radius: 20px 20px 0 0;
+  color: #fff;
+  font-size: 28px;
+  padding: 20px 26px;
+}
+
+#edit-profile h2 span[class*="fontawesome-"] {
+  margin-right: 14px;
+}
+
+#edit-profile fieldset {
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: 2px 14px;
+}
+
+#edit-profile fieldset p {
+  color: #777;
+  margin-bottom: 14px;
+}
+
+#edit-profile fieldset p:last-child {
+  margin-bottom: 0;
+}
+
+#edit-profile fieldset input {
+  border-radius: 3px;
+}
+
+#edit-profile fieldset input[type="email"], #edit-profile fieldset input[type="password"] {
+  background: #eee;
+  color: #777;
+  padding: 4px 10px;
+  width: 100%;
+}
+
+#edit-profile fieldset input[type="submit"] {
+  background: #33cc77;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 4px 0;
+  width: 100px;
+}
+
+#edit-profile fieldset input[type="submit"]:hover {
+  background: #28ad63;
+}
+// .form-group.input-edit{
+//   text-align: left;
+// }
