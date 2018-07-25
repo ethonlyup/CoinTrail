@@ -9,9 +9,8 @@
   bottom:0;
   text-align:center;
   flex-shrink: 0;
-  width: 100vw;
+  width: 100%;
   color: $light-gray;
-  width: 100vw;
 }
 .footer-links {
   display: flex;
@@ -34,26 +33,4 @@
 .fa-github{
   color: white;
 }
-// .footer{background:#0A95AA; color:#fff; height:100px}
-// .copy{
-//   font-size:10px;
-//   text-align:center
-// }
-// .bottom-nav{
-//   text-align:center;
-//   background:#02BDD6;
-//   width:100%;
-//   color:#fff;
-//   height:35px
-// }
-// .bottom-nav .nav{float:none; margin:0}
-// .bottom-nav .nav a{ padding: 0 25px; line-height:35px}
-// .fixed-top, .fixed-bottom{
-//   background:#02BDD6;
-//   position:fixed;
-//   top:0;
-// }
-// .fixed-bottom{
-//   top:auto;
-//   bottom:0;
-// }
+

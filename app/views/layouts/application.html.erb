@@ -32,16 +32,16 @@
   <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
   <meta name="twitter:image:src" content="<%= meta_image %>">
 </head>
+
 <body style="background-image: url(<%= image_path 'sarah.png'%>)">
   <%= render 'shared/navbar' %>
   <%#= render 'shared/flashes' %>
+
   <div class="content">
     <%= yield %>
   </div>
 
-  <footer class="footer">
     <%= render 'shared/footer' %>
-  </footer>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
