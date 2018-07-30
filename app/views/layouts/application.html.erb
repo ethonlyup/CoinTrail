@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
- <!--  <link rel="stylesheet" href="cssbuttonhover.css" /> -->
+  <!--  <link rel="stylesheet" href="cssbuttonhover.css" /> -->
   <%= favicon_link_tag 'ct3-transparent.png' %>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
@@ -32,16 +32,16 @@
   <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
   <meta name="twitter:image:src" content="<%= meta_image %>">
 </head>
+
 <body style="background-image: url(<%= image_path 'sarah.png'%>)">
   <%= render 'shared/navbar' %>
   <%#= render 'shared/flashes' %>
+
   <div class="content">
     <%= yield %>
   </div>
 
-  <footer class="footer">
-    <%= render 'shared/footer' %>
-  </footer>
+  <%= render 'shared/footer' %>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
