@@ -256,7 +256,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   openssl
-  pg (~> 0.21)
+  pg (~> 0.21.0)
   pry-byebug
   pry-rails
   puma
@@ -273,7 +273,7 @@ DEPENDENCIES
   websocket
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.2
+   1.17.1
